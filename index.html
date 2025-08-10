@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Did it rain last night?</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+  <main class="card" role="main">
+    <h1>Did it rain last night?</h1>
+    <p class="sub">Checks the previous 24 hours at your location.</p>
+
+    <form id="searchForm" class="row" autocomplete="off">
+      <textarea id="placeInput" rows="2" placeholder="City, address, or postal code (e.g., 'Seattle', 'SW1A 1AA')" aria-label="Location"></textarea>
+      <button id="lookupBtn" type="submit">Check</button>
+    </form>
+
+    <div class="row split">
+      <button id="geoBtn" class="secondary" type="button">Use my current location</button>
+      <button id="demoBtn" class="secondary" type="button">Try an example (Tokyo)</button>
+    </div>
+
+    <section id="result" class="result" aria-live="polite" aria-atomic="true">
+      <div id="status" class="meta">Enter a place or use your location.</div>
+      <div id="answer" class="answer" hidden>—</div>
+      <div id="details" class="meta" hidden></div>
+      <div id="chips" style="margin-top:10px;" hidden></div>
+      <div class="tiny">
+        Privacy: We only send coordinates/place text to the Open-Meteo API to fetch weather. Nothing is stored by this page.
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
